@@ -4,8 +4,14 @@ for i in $(eval echo {$start1..$end1})
 do
    python train_Kfold_mmasleep.py --fold_id=$i --ch=4 --np_data_dir data_path/sleepedf-78
    python train_Kfold_mmasleep_isruc.py --fold_id=$i --ch=4 --np_data_dir data_path/isruc-sleep-3
+done
 
-   done
+start1=0
+end1=4
+for i in $(eval echo {$start1..$end1})
+do
+   python train_Kfold_mmasleep_isruc.py --fold_id=$i --ch=4 --np_data_dir data_path/isruc-sleep-1
+done
 
 start=0
 end=19

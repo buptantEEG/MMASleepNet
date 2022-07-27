@@ -58,13 +58,15 @@ class Config():
         self.nhead=4
         self.num_layers=1
         self.inplanes=self.ch
+        self.EEG_channels=2
         self.subject=subject
         self.SS=SS
         self.fold_id = fold_id
         self.lr = 0.0001
         self.epochs = 150
+        
         # Model
-        self.model=model.MMASleepNet_eegeogemg_plus(self).to(device)
+        self.model=model.MMASleepNet(self).to(device)
         # self.models = [model.MAttnSleep().to(device) for i in range(len(self.channels))]
         # self.model = model.EEGNet(C=8, T=30*128)
         
